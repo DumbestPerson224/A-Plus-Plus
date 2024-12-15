@@ -11,13 +11,13 @@ struct instructions {
 struct instructions instructions;
 void get_opcode(const char* opcode){
     for(int i = 0; i < sizeof(instructions.opcodes); i++){
-        if(strcmp(opcode, "MOV") == 0){
+        if(strcmp(opcode, "KMOV") == 0){
             instructions.opcodes[i] = opcode;
-        }else if(strcmp(opcode, "ADD") == 0){
+        }else if(strcmp(opcode, "KADD") == 0){
             instructions.opcodes[i] = opcode;
-        }else if(strcmp(opcode, "PUSH") == 0){
+        }else if(strcmp(opcode, "KPUSH") == 0){
             instructions.opcodes[i] = opcode;
-        }else if(strcmp(opcode, "POP") == 0){
+        }else if(strcmp(opcode, "KPOP") == 0){
             instructions.opcodes[i] = opcode;
         }else{
             printf("%s %s", opcode, " is not a valid opcode");
