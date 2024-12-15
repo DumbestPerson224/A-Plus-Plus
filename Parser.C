@@ -22,7 +22,7 @@ void get_opcode(const char* opcode){
 
 void get_operands(const char* operand){
      if(opcode_index < 100){
-          if(strcmp(operand, "ah") == 0 || strcmp(operand, "al")){
+          if(strcmp(operand, "ah") == 0 || strcmp(operand, "al") == 0 || strcmp(operand, "dh") == 0){
                instructions.operands[operand_index++] = operand;
           }
      }
