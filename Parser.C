@@ -6,34 +6,22 @@ struct instructions {
     const char* opcodes[100];
     const char* operands[100];
 };
-
+int opcode_index = 0, operand_index = 0;
 
 struct instructions instructions;
 void get_opcode(const char* opcode){
-    for(int i = 0; i < sizeof(instructions.opcodes); i++){
-        if(strcmp(opcode, "KMOV") == 0){
-            instructions.opcodes[i] = opcode;
-        }else if(strcmp(opcode, "KADD") == 0){
-            instructions.opcodes[i] = opcode;
-        }else if(strcmp(opcode, "KPUSH") == 0){
-            instructions.opcodes[i] = opcode;
-        }else if(strcmp(opcode, "KPOP") == 0){
-            instructions.opcodes[i] = opcode;
-        }else if(strcmp(opcode, "KXOR") == 0){
-            instructions.opcodes[i] = opcode;
-        }else{
-            printf("%s %s", opcode, " is not a valid opcode");
-        }
-        break;
+    if(opcode_index < 100){
+       if(strcmp(opcode, "kadd") || strcmp(opcode, "ksub") == 0 || strcmp(opcode, "kmul") || strcmp(opcode, "kdiv")){
+           instructions.opcodes[opcode_index++] = opcode;
+       }
     }
 }
 
 void get_operand(const char* operand){
-    for(int i = 0; i < sizeof(instructions.opcodes); i++){
-        if(strcmp(operand, "EAX") == 0){
-            instructions.opcodes[i] = operand;
+    if(operand_index < 100){
+        if(strcmp(opcode, "eax") == 0){
+            instructions.operands[operand_index++] = opcode;
         }
-        break;
     }
 }
 
