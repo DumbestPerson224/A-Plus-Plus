@@ -19,6 +19,8 @@ void get_opcode(const char* opcode){
             instructions.opcodes[i] = opcode;
         }else if(strcmp(opcode, "KPOP") == 0){
             instructions.opcodes[i] = opcode;
+        }else if(strcmp(opcode, "KXOR") == 0){
+            instructions.opcodes[i] = opcode;
         }else{
             printf("%s %s", opcode, " is not a valid opcode");
         }
