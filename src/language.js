@@ -8,6 +8,6 @@ function changeLanguage(){
         case 3:
             break;
         default:
-            console.log(`${language.toString()} is not a supported language`);
+            console.error(`${language.toString()} is not a supported language`);
     }
 }
