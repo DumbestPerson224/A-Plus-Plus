@@ -7,6 +7,7 @@ enum opcodes{
     MOVE_OPERATION,
     DIVIDE_OPERATION,
     MULTIPLY_OPERATION,
+    XOR_OPERATION,
 };
 
 int saved_opcode, opcode_index = 0;
@@ -43,6 +44,10 @@ void convert_opcode(){
            printf("*: %s\n", opcodes[opcode_index]);
            opcode_index += 1;
            break;
+        case XOR_OPERATION:
+          opcodes[opcode_index] = "xor";
+          opcode_index += 1;
+          break;
     }
 }
 
@@ -57,6 +62,8 @@ void get_opcode(const char* opcode){
         saved_opcode = DIVIDE_OPERATION;
     }else if(strcmp(opcode, "*") == 0){
         saved_opcode = MULTIPLY_OPERATION;
+    }else if(strcmp(opcode, "^") == 0){
+         saved_opcode = XOR_OPERATION;
     }
     convert_opcode();
 }
