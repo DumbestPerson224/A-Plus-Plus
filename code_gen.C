@@ -8,6 +8,8 @@ enum opcodes{
     DIVIDE_OPERATION,
     MULTIPLY_OPERATION,
     XOR_OPERATION,
+    OR_OPERAION,
+    JUMP_OPERATION,
 };
 
 int saved_opcode, opcode_index = 0;
@@ -47,7 +49,15 @@ void convert_opcode(){
         case XOR_OPERATION:
           opcodes[opcode_index] = "xor";
           opcode_index += 1;
-          break;
+          break;  
+        case OR_OPERATION:
+           opcodes[operand_index] = "or";
+           opcode_index += 1;
+           break;
+        case JUMP_OPERATION:
+           opcodes[operand_index] = "jmp"; 
+           opcode_index += 1;
+           break;
     }
 }
 
@@ -64,6 +74,10 @@ void get_opcode(const char* opcode){
         saved_opcode = MULTIPLY_OPERATION;
     }else if(strcmp(opcode, "^") == 0){
          saved_opcode = XOR_OPERATION;
+    }else if(strcmp(opcode, "||") == 0){
+         saved_opcode = OR_OPERATION;
+    }else if(strcmp(opcode, "JUMP") == 0){
+         saved_opcode = JUMP_OPERATION;
     }
     convert_opcode();
 }
